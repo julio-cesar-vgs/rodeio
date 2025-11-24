@@ -1,2 +1,170 @@
-"# rodeio" 
+# 🐎 Rodeio da Paola — Landing Page de Inscrição
+
+Uma aplicação Node.js simples que apresenta um evento de rodeio e permite inscrições gratuitas através de um formulário.  
+As informações são armazenadas localmente em um banco de dados SQLite.
+
+---
+
+## 🌾 Visão Geral
+
+**Rodeio da Paola** é uma landing page moderna e temática, construída para promover um evento de rodeio em **Guaíba - RS**, com data e horário definidos.  
+O projeto usa **Node.js**, **Express** e **SQLite** para armazenar inscrições, além de trazer elementos visuais e sonoros como:
+
+- Fundo com imagem translúcida (`resources/rodeo.jpg`)  
+- Efeitos de fade-in e partículas (raios de sol e brilho nos cantos)  
+- Áudio ambiente com **trotes de cavalo**
+- Modal de confirmação após a inscrição  
+- Estilo rústico, porém elegante 🌾  
+
+---
+
+## 🧱 Estrutura do Projeto
+
+```
+rodeio-farroupilha/
+├─ app.js
+├─ inscricoes.db  ← será criado automaticamente
+├─ package.json
+└─ resources/
+   ├─ rodeo.jpg
+   └─ trote.mp3
+```
+---
+
+## ⚙️ Tecnologias Utilizadas
+
+| Categoria | Ferramenta / Biblioteca |
+|------------|-------------------------|
+| Servidor | [Node.js](https://nodejs.org/) |
+| Framework Web | [Express](https://expressjs.com/) |
+| Banco de Dados | [SQLite](https://www.sqlite.org/) |
+| Conector SQLite | `sqlite` e `sqlite3` |
+| Middleware | `body-parser` |
+| Estilo | CSS + Font Awesome |
+| Interface | HTML + animações em CSS |
+| Efeitos Visuais | Partículas e gradientes |
+| Som | `<audio>` com loops leves (trotes) |
+
+---
+
+## 🚀 Como Executar Localmente
+
+### 1. Clone o repositório ou copie os arquivos
+
+```bash
+git clone https://github.com/seuusuario/rodeio-da-paola.git
+cd rodeio-da-paola
+```
+
+### 2. Instale as dependências
+
+```bash
+npm install express body-parser sqlite sqlite3
+```
+
+### 3. Execute o servidor
+
+```bash
+node app.js
+```
+
+> Se estiver tudo certo, você verá:
+>
+> 🌾 Servidor rodando em http://localhost:3000
+
+### 4. Acesse no navegador
+
+[http://localhost:3000](http://localhost:3000)
+
+---
+
+## 🗂️ Banco de Dados (SQLite)
+
+As inscrições são salvas automaticamente em um arquivo local chamado **`inscricoes.db`**.
+
+### Estrutura da tabela:
+```sql
+CREATE TABLE inscricoes (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  nome TEXT NOT NULL,
+  email TEXT NOT NULL,
+  telefone TEXT NOT NULL
+);
+```
+
+---
+
+## 🔍 Como Consultar o Banco
+
+Você pode acessar o arquivo SQLite de diversas formas:
+
+### 💻 Usando o CLI
+```bash
+sqlite3 inscricoes.db
+```
+
+No prompt:
+```sql
+.tables
+SELECT * FROM inscricoes;
+.exit
+```
+
+### 🧩 Usando o VS Code
+Instale a extensão **SQLite Viewer** ou **SQLite Explorer**  
+Abra o arquivo `.db` → clique com o botão direito → “Open Database”.
+
+### 🪟 Usando uma Interface Gráfica
+- [DB Browser for SQLite](https://sqlitebrowser.org)  
+- [SQLiteStudio](https://sqlitestudio.pl)
+
+Ambos permitem navegar, filtrar e exportar os dados.
+
+---
+
+## 💡 Recursos Visuais e Efeitos
+
+- **Animação de entrada (fade-in + slide)**  
+- **Botão pulsante** com efeito de destaque  
+- **Gradiente suave** sobre imagem de fundo  
+- **Partículas flutuantes** simulando raios de sol  
+- **Brilho leve nos cantos** da tela  
+- **Som ambiente** reproduzido em loop leve  
+
+---
+
+## 🧠 Decisões Técnicas
+
+1. **Node.js + Express** foram escolhidos pela simplicidade e familiaridade com aplicações web leves.  
+2. **SQLite** é usado como banco embutido para facilitar testes e evitar dependências externas.  
+3. **HTML e CSS puros**, sem frameworks front-end, mantendo a leveza e o foco no tema.  
+4. O **fundo com imagem translúcida** cria profundidade sem perder legibilidade.  
+5. **Animações suaves** e **sons leves** ajudam na imersão sem distrair o usuário.
+
+---
+
+## 🔐 Validação do Formulário
+
+O formulário HTML exige todos os campos: **Nome**, **Email** e **Telefone**.  
+A validação é feita tanto no front-end (HTML5 `required`) quanto no back-end (Express).
+
+---
+
+## 🧾 Licença
+
+Este projeto é livre para uso e modificação pessoal.  
+Créditos e referências são bem-vindos.
+
+---
+
+## 🌟 Créditos
+
+- Imagem de fundo: foto de rodeio (coloque a sua em `resources/rodeo.jpg`)  
+- Sons ambiente: gravações livres de direitos autorais (coloque em `resources/`)  
+- Ícones: [Font Awesome](https://fontawesome.com/)  
+- Desenvolvido com ❤️ e café por **Paola Bica Perez**
+
+---
+
+> “Onde o campo encontra o código e o vento carrega o som dos cascos.”
 "# rodeio" 
