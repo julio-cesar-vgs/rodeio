@@ -12,6 +12,9 @@ const bodyParser = require('body-parser');
 // Substitui o 'sqlite3' pois o SQLite (arquivo local) não persiste dados na Vercel (serverless).
 const { Pool } = require('pg');
 
+// Carrega variáveis de ambiente do arquivo .env para desenvolvimento local
+require('dotenv').config();
+
 // 2. CONFIGURAÇÃO DA APLICAÇÃO
 // -----------------------------------------------------------------------------
 const app = express();
